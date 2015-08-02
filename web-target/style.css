@@ -1,0 +1,319 @@
+/*
+   Copyright 2015 Christian Felde
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#canvas-outer {
+	position: relative;
+    top: 10px;
+    height: 200px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+#building {
+	position:relative;
+	top: 40px;
+    height: 150px;
+	width: 340px;
+	float:left;
+}
+
+#piechart {
+	position:relative;
+	width: 360px;
+	float:left;
+}
+
+#chart {
+	position: relative;
+	top: 20px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+#building-1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+}
+
+#building-2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+}
+
+#building-3 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+}
+
+#building-4 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+}
+
+#building-5 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -5;
+}
+
+#building-6 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+}
+
+.worker-1 {
+    position: absolute;
+    top: 15px;
+    z-index: 0;
+}
+
+.worker-2 {
+    position: absolute;
+    top: 40px;
+    z-index: 0;
+}
+
+.worker-3 {
+    position: absolute;
+    top: 65px;
+    z-index: 0;
+}
+
+.worker-4 {
+    position: absolute;
+    top: 90px;
+    z-index: 0;
+}
+
+.worker-left-road {
+    position: absolute;
+    top: 92px;
+    z-index: 10;
+}
+
+.worker-right-road {
+    position: absolute;
+    top: 92px;
+    z-index: 10;
+}
+
+.dg.ac {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: 1000;
+}
+
+.title-relative {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    height: 100px;
+    width: 100%;
+    vertical-align: middle;
+    line-height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+    z-index: 200;
+
+    position: relative;
+}
+
+.title-fixed {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    height: 100px;
+    width: 100%;
+    vertical-align: middle;
+    line-height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+    z-index: 200;
+
+    position: fixed;
+    top: 0px;
+}
+
+#technical-notes {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    height: 80px;
+    width: 100%;
+    vertical-align: middle;
+    line-height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+
+    position: relative;
+}
+
+#copyright {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    height: 40px;
+    width: 100%;
+    vertical-align: middle;
+    line-height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: small;
+
+    position: relative;
+}
+
+#copyright a:link {
+    color: #FFFFFF;
+}
+
+#copyright a:visited {
+    color: #FFFFFF;
+}
+
+#copyright a:hover {
+    color: #FFFFFF;
+}
+
+#copyright a:active {
+    color: #FFFFFF;
+}
+
+#title-space {
+    position: relative;
+    display: none;
+    height: 100px;
+}
+
+.content-outer {
+	padding: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+	font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 140%;
+}
+
+.content-section {
+    overflow: hidden;
+}
+
+.content-left {
+    float:left;
+}
+
+.content-right {
+    overflow: hidden;
+}
+
+.pie-example-img {
+    padding: 10px;
+    position: relative;
+}
+
+p {
+    padding-bottom: 10px;
+}
+
+a:link {
+    color: #000000;
+}
+
+a:visited {
+    color: #000000;
+}
+
+a:hover {
+    color: #FF00FF;
+}
+
+a:active {
+    color: #0000FF;
+}
