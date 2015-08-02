@@ -1,4 +1,4 @@
-# blender-corp-web
+# Blender Corp HR simulator
 
 Blender Corp was is dire need of improving its approach to how it hired, fired, and managed company employees. A model was developed, allowing them to simulate the impact of various measures.
 
